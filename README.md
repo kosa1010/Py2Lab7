@@ -3,7 +3,7 @@
 Tworzenie graficznych interfejsów użytkownika (GUI) w Pythonie pozwala na budowanie aplikacji przyjaznych dla użytkownika. Zamiast komunikacji tekstowej (np. przez konsolę), użytkownicy mogą wchodzić w interakcję z programem za pomocą okien, przycisków, pól tekstowych i innych elementów interfejsu.
 W tej instrukcji skupimy się na dwóch popularnych bibliotekach GUI w Pythonie:
 - [Tkinter](https://docs.python.org/3/library/tkinter.html) – prosta i wbudowana biblioteka GUI, idealna do nauki i budowy podstawowych aplikacji desktopowych.
-- [Kivy](https://kivy.org/doc/stable/) – nowoczesna biblioteka służąca do budowy aplikacji wieloplatformowych (np. na Androida, iOS), wspierająca również urządzenia dotykowe.
+- [Kivy](https://kivy.org/doc/stable/) – biblioteka służąca do budowy aplikacji wieloplatformowych (np. na Androida, iOS), wspierająca również urządzenia dotykowe.
 
 ## Tkinter
 Tkinter to standardowa biblioteka GUI do Pythona. Jest łatwa w użyciu i doskonała do nauki podstawowych pojęć GUI.
