@@ -153,4 +153,83 @@ class MyApp(App):
 MyApp().run()
 ```
 
+Przykład obliczający pole prostokąta na podstawie danych użytkownika, obsługuje niepoprawne dane wejściowe.
+```Python
+from kivy.app import App
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.label import Label
+from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
 
+class Kalkulator(GridLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.cols = 2
+
+        self.add_widget(Label(text='Długość a (m):'))
+        self.a = TextInput()
+        self.add_widget(self.a)
+
+        self.add_widget(Label(text='Szerokość b (m):'))
+        self.b = TextInput()
+        self.add_widget(self.b)
+
+        self.wynik = Label(text='Pole: ')
+        self.add_widget(self.wynik)
+
+        self.btn = Button(text='Oblicz')
+        self.btn.bind(on_press=self.oblicz)
+        self.add_widget(self.btn)
+
+    def oblicz(self, instance):
+        try:
+            a = float(self.a.text)
+            b = float(self.b.text)
+            self.wynik.text = f'Pole: {a * b} m²'
+        except:
+            self.wynik.text = 'Błąd danych'
+
+class MyApp(App):
+    def build(self):
+        return Kalkulator()
+
+MyApp().run()
+```
+Zmiana koloru tła przełącznikiem
+```Python
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.switch import Switch
+from kivy.uix.label import Label
+
+class MyLayout(BoxLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.orientation = 'vertical'
+
+        self.label = Label(text='Tło: jasne')
+        self.add_widget(self.label)
+
+        self.switch = Switch(active=False)
+        self.switch.bind(active=self.on_switch)
+        self.add_widget(self.switch)
+
+    def on_switch(self, instance, value):
+        if value:
+            self.label.text = 'Tło: ciemne'
+            self.parent.background_color = (0.2, 0.2, 0.2, 1)
+        else:
+            self.label.text = 'Tło: jasne'
+            self.parent.background_color = (1, 1, 1, 1)
+
+class MyApp(App):
+    def build(self):
+        return MyLayout()
+
+MyApp().run()
+```
+## Zadania do wykonania
+1. Zadanie z Tkinter: Stwórz aplikację z polem tekstowym, które po kliknięciu przycisku zapisuje treść do pliku. Dodaj etykietę z komunikatem "Zapisano!".
+2. Zadanie z Kivy: Zbuduj aplikację, która pobiera imię użytkownika i po kliknięciu przycisku wyświetla powitanie (np. "Witaj, Aniu!").
+3. Napisz aplikację (w Kivy lub Tkinter), która umożliwia wybór koloru tła z listy rozwijanej (dropdown) i zmienia wygląd okna.
+   
