@@ -7,23 +7,23 @@ W tej instrukcji skupimy się na dwóch popularnych bibliotekach GUI w Pythonie:
 
 ## Tkinter
 Tkinter to standardowa biblioteka GUI do Pythona. Jest łatwa w użyciu i doskonała do nauki podstawowych pojęć GUI.
-### Główne komponenty (widgety)
-- Tk(): Główne okno aplikacji
-- Label: Etykieta z tekstem
-- Button: Przycisk
-- Entry: Pole tekstowe jednowierszowe
-- Text: Wielowierszowe pole tekstowe
-- Frame: Kontener do organizacji innych widgetów
-- Checkbutton: Przycisk wyboru (checkbox)
-- Radiobutton: Przycisk opcji
-- Listbox: Lista opcji do wyboru
-- Canvas: Obszar do rysowania
-- Menu: Pasek menu
-- Scale: Suwak
-- Spinbox: Pole wyboru wartości liczbowej
-- Messagebox: Okna dialogowe z komunikatami
+#### Główne komponenty (widgety)
+🔹 Tk(): Główne okno aplikacji
+🔹 Label: Etykieta z tekstem
+🔹 Button: Przycisk
+🔹 Entry: Pole tekstowe jednowierszowe
+🔹 Text: Wielowierszowe pole tekstowe
+🔹 Frame: Kontener do organizacji innych widgetów
+🔹 Checkbutton: Przycisk wyboru (checkbox)
+🔹 Radiobutton: Przycisk opcji
+🔹 Listbox: Lista opcji do wyboru
+🔹 Canvas: Obszar do rysowania
+🔹 Menu: Pasek menu
+🔹 Scale: Suwak
+🔹 Spinbox: Pole wyboru wartości liczbowej
+🔹 Messagebox: Okna dialogowe z komunikatami
 
-Układ komponentów:
+#### Układ komponentów:
 - pack() – proste układanie elementów w pionie lub poziomie
 - grid() – układ tabelaryczny
 - place() – pozycjonowanie absolutne
@@ -99,5 +99,24 @@ wynik_label.grid(row=3, columnspan=2)
 root.mainloop()
 ```
 
+## Kivy
+
+#### Opis
+Kivy to otwartoźródłowa biblioteka do tworzenia aplikacji graficznych w Pythonie z myślą o urządzeniach dotykowych i wieloplatformowości. Aplikacje można uruchamiać na Windows, macOS, Linux, Android, iOS.
+#### Główne komponenty (widgety)
+🔹 App – klasa bazowa aplikacji
+🔹 Widget – klasa bazowa dla elementów GUI
+🔹 Label – tekst statyczny
+🔹 Button – przycisk
+🔹 TextInput – pole tekstowe
+🔹 BoxLayout – układ liniowy
+🔹 GridLayout – układ tabelaryczny
+🔹 Slider – suwak
+🔹 CheckBox – pole wyboru
+🔹 Spinner – rozwijana lista (dropdown)
+🔹 Switch – przełącznik
+🔹 ScreenManager – zarządzanie wieloma ekranami
+
+Przykład 1: Prosta aplikacja z przyciskiem
 
 
