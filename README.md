@@ -232,4 +232,5 @@ MyApp().run()
 1. Zadanie z Tkinter: Stwórz aplikację z polem tekstowym, które po kliknięciu przycisku zapisuje treść do pliku. Dodaj etykietę z komunikatem "Zapisano!".
 2. Zadanie z Kivy: Zbuduj aplikację, która pobiera imię użytkownika i po kliknięciu przycisku wyświetla powitanie (np. "Witaj, Aniu!").
 3. Napisz aplikację (w Kivy lub Tkinter), która umożliwia wybór koloru tła z listy rozwijanej (dropdown) i zmienia wygląd okna.
+4. Zadanie Android APK: Zbuduj aplikację Kivy, która liczy pole prostokąta i przekształć ją do pliku APK używając Buildozera.
    
