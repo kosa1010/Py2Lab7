@@ -228,6 +228,59 @@ class MyApp(App):
 
 MyApp().run()
 ```
+
+### Generowanie pliku APK (Android) z aplikacji Kivy
+
+Aby wygenerować plik APK dla aplikacji (np. kalkulatora pola prostokąta), użyj narzędzia Buildozer. Poniżej kroki dla systemu Linux:
+
+✅ Krok 1: Instalacja Buildozer
+```bash
+sudo apt update
+sudo apt install -y python3-pip git zip unzip openjdk-17-jdk
+pip install "buildozer[android]"
+```
+📌 Jeśli używasz Windowsa – zalecane jest uruchomienie tego procesu w WSL2 (Windows Subsystem for Linux).
+
+✅ Krok 2: Inicjalizacja projektu
+
+W katalogu z plikiem .py uruchom:
+```bash
+buildozer init
+```
+✅ Krok 3: Edycja pliku buildozer.spec
+
+W pliku buildozer.spec, zmodyfikuj m.in.:
+```bash
+source.include_exts = py,png,jpg,kv,atlas
+requirements = python3,kivy
+orientation = portrait
+package.name = KalkulatorPole
+package.domain = org.example
+```
+✅ Krok 4: Budowanie APK
+```bash
+buildozer -v android debug
+```
+Po zakończeniu, plik APK znajdziesz w katalogu bin/.
+
+📌 Uwaga: Kompilacja wymaga systemu Linux lub WSL2 (Windows Subsystem for Linux) na Windowsie.
+
+Więcej: https://buildozer.readthedocs.io/en/latest/
+
+❗ Rozwiązywanie problemów z Buildozerem
+
+Błąd: Unknown command/target android – upewnij się, że zainstalowano Buildozera z obsługą Androida:
+```bash
+pip install "buildozer[android]"
+```
+Brak systemu Linux – Buildozer działa tylko na Linuxie lub w WSL2 (dla Windowsa).
+
+Problem z SDK/NDK – uruchom ponownie:
+```bash
+buildozer android clean
+buildozer android debug
+```
+Upewnij się, że buildozer.spec zawiera requirements = python3,kivy
 ## Zadania do wykonania
 1. Zadanie z Tkinter: Stwórz aplikację z polem tekstowym, które po kliknięciu przycisku zapisuje treść do pliku. Dodaj etykietę z komunikatem "Zapisano!".
 2. Zadanie z Kivy: Zbuduj aplikację, która pobiera imię użytkownika i po kliknięciu przycisku wyświetla powitanie (np. "Witaj, Aniu!").
