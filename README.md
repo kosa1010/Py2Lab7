@@ -142,5 +142,15 @@ Kivy to otwartoźródłowa biblioteka do tworzenia aplikacji graficznych w Pytho
 🔹 ScreenManager – zarządzanie wieloma ekranami
 
 Przykład 1: Prosta aplikacja z przyciskiem
+```Python
+from kivy.app import App
+from kivy.uix.button import Button
+
+class MyApp(App):
+    def build(self):
+        return Button(text='Kliknij mnie!')
+
+MyApp().run()
+```
 
 
